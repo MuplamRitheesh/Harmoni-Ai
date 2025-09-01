@@ -244,4 +244,161 @@ footer {
   width: 20px;
  height:20px;
 }
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: white;
+}
 
+/* Default Desktop */
+#nav-links {
+  display: flex;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  #nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: #111;
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  #nav-links.show {
+    display: flex;
+  }
+
+  #nav-links li a {
+    font-size: 1rem;
+    padding: 8px 0;
+    display: block;
+    color: white;
+  }
+}
+/* Responsive Navbar */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+ }
+
+/* Desktop */
+#nav-links {
+  display: flex;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  #nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: inherit; /* keeps your current nav bg */
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  #nav-links.show {
+    display: flex;
+  }
+
+  #nav-links li a {
+    font-size: 1rem;
+    padding: 8px 0;
+    display: block;
+  }
+}
+
+/* Responsive Footer Buttons */
+.footer-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 15px 0;
+}
+
+.footer-buttons button {
+  padding: 8px 14px;
+  font-size: 1rem;
+  border-radius: 8px;
+  flex: 1 1 auto; /* makes them shrink/grow */
+  max-width: 180px; /* prevents huge buttons on laptops */
+}
+
+/* Mobile Footer */
+@media (max-width: 768px) {
+  .footer-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-buttons button {
+    width: 90%; /* full width on mobile */
+    max-width: none;
+  }
+}
+/* Footer buttons grid */
+.footer-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* default 2 per row */
+  gap: 10px;
+  padding: 15px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.footer-buttons button {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* For larger screens (laptop/desktop) */
+@media (min-width: 1024px) {
+  .footer-buttons {
+    grid-template-columns: repeat(4, 1fr); /* 4 per row */
+  }
+}
+/* Chat Box */
+.chat-box {
+  max-width: 600px;       /* limit width on large screens */
+  margin: 20px auto;      /* center horizontally */
+}
+
+/* Chat Input */
+.chat-input {
+  max-width: 600px;
+  margin: 10px auto 30px auto;
+  display: flex;
+  gap: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .chat-box,
+  .chat-input {
+    max-width: 100%;   /* take full width on mobile/tablet */
+    margin: 10px;
+  }
+}
