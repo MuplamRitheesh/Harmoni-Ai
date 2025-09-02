@@ -108,8 +108,10 @@ footer {
     width: 100%;
   text-align: center;
   padding: 20px;
+  height: auto;
   margin-top: 100px;
-  background: rgba(255,255,255,0.05);
+  background: rgba(105, 84, 84, 0.05);
+ background-color: #232946;
 }
 
 /* Footer Buttons */
@@ -405,4 +407,15 @@ footer {
     max-width: 100%;   /* take full width on mobile/tablet */
     margin: 10px;
   }
+}
+button,
+.btn,
+.chat-input button {
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+button:hover,
+.btn:hover,
+.chat-input button:hover {
+  background: #ff4b4b;
+  transform: scale(1.05);
 }
