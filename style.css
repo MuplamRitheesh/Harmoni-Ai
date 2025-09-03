@@ -102,7 +102,7 @@ body {
 
 /* Footer */
 footer {
-    position: fixed;
+    position:relative;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -116,10 +116,11 @@ footer {
 
 /* Footer Buttons */
 .footer-buttons {
-  display: grid;
+  display: flex;
   grid-template-columns: 1fr 1fr;
   gap: 8px;
   margin-top: 12px;
+  position: relative;
 }
 
 .footer-buttons button {
@@ -137,7 +138,7 @@ footer {
 }
 /* Messages */
 .chat-box {
-  margin-top: 100px 0;
+  margin-top: 10px 0;
   flex: 1;
   overflow-y: auto;
   display: flex;
@@ -154,7 +155,7 @@ footer {
 }
 
 .bot-message {
-    margin-top: 20px;
+    margin-top: 5px;
   background: #333;
   align-self: flex-start;
 }
