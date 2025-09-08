@@ -86,14 +86,60 @@
     <button>Tasks</button>
     <button>Quote of day</button>
   </div>
+<section class="faq-section">
+  <h2>FAQs</h2>
+
+  <div class="faq-item">
+    <button class="faq-question">What is Harmoni AI?</button>
+    <div class="faq-answer">
+      <p>Harmoni AI is an intelligent chatbot designed to provide instant support, answer questions, and enhance user engagement.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">How does Harmoni AI work?</button>
+    <div class="faq-answer">
+      <p>It uses advanced natural language processing (NLP) and AI algorithms to understand your queries and respond with accurate and relevant answers.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Is Harmoni AI free to use?</button>
+    <div class="faq-answer">
+      <p>Yes, Harmoni AI offers a free version with core features. Premium plans may include advanced analytics, integrations, and customization.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Can I integrate Harmoni AI into my website or app?</button>
+    <div class="faq-answer">
+      <p>Absolutely! Harmoni AI can be embedded into websites, apps, or business platforms using our API or widget.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Is my data safe with Harmoni AI?</button>
+    <div class="faq-answer">
+      <p>Yes. We take privacy seriously and ensure that all user conversations are encrypted and handled securely.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">How can I get support if I face issues?</button>
+    <div class="faq-answer">
+      <p>You can reach our support team anytime via the contact form on the website or email us at <strong>support@harmoni.ai</strong>.</p>
+    </div>
+  </div>
+</section>
 
   <!-- Footer -->
   <footer>
     <p>© 2025 Harmoni AI. All rights reserved.</p>
     <p>Developed with 🤍 by Team Edunoverse</p>
   </footer>
-
-  <!-- Script -->
+  
+</section>
+<!-- Script -->
   <script>
     // Hamburger toggle
     const hamburger = document.getElementById('hamburger');
@@ -102,6 +148,13 @@
     hamburger.addEventListener('click', () => {
       navLinks.classList.toggle('show');
     });
+    // FAQ accordion (multiple open at once)
+  document.querySelectorAll(".faq-question").forEach((button) => {
+    button.addEventListener("click", () => {
+      const faqItem = button.parentElement;
+      faqItem.classList.toggle("active");
+    });
+  });
   </script>
 </body>
 </html>
