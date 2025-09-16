@@ -18,53 +18,43 @@
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="login.html">Login</a></li>
       <li><a href="register.html">Register</a></li>
+      <li><a href="#about">About Us</a></li>
     </ul>
   </nav>
-  
-  <!-- Hero -->
-  <section class="hero">
-    <h1>Welcome to <span>Harmoni AI</span></h1>
-    <p>Your AI-powered companion with unique, proactive conversations.</p>
-    <a href="register.html" class="btn">Get Started with Harmoni Ai</a>
-  </section>
- <!-- 📋 Google Form Section -->
-<section id="user-form" class="form-section">
-  <div class="form-container">
-    <h2>📝 Share Your Details with Harmoni AI</h2>
-    <p>Your responses will help us improve your experience ✨</p>
+<!-- Hero -->
+<section class="hero">
+ <h1 id="typing-text"></h1>
+  <p>Your AI-powered companion with unique, proactive conversations.</p>
 
-    <!-- Redirect Button -->
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSe6T0diMO8wqetxnln7kz96wp4buGzFaza4p1R6R9SB2fFdvQ/viewform?usp=header" 
-       target="_blank" 
-       class="form-btn">
-       Fill the Form
-    </a>
+  <!-- Dropdown inside styled button -->
+  <div class="dropdown-btn">
+    <select id="profession" onchange="showSelection()" required>
+      <option value="" disabled selected>🎯 Choose Your Profession</option>
+      <option value="🎓 Student">🎓 Student</option>
+      <option value="💼 Working Professional">💼 Working Professional</option>
+      <option value="👩 Women">👩 Women</option>
+    </select>
   </div>
+  <br>
+  <button class="btn" onclick="redirectToRegister()">Get Started with Harmoni AI</button>
+
+  <!-- Display Selected Profession -->
+  <p id="selected-text" class="selected-output"></p>
 </section>
+  <!-- 📋 Google Form Section -->
+  <section id="user-form" class="form-section">
+    <div class="form-container">
+      <h2>📝 Share Your Details with Harmoni AI</h2>
+      <p>Your responses will help us improve your experience ✨</p>
 
-<style>
-.form-btn {
-  display: inline-block;
-  padding: 12px 25px;
-  background: linear-gradient(135deg, #4f46e5, #6d28d9);
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-.form-btn:hover {
-  background: linear-gradient(135deg, #4338ca, #5b21b6);
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-}
-</style>
-
+      <!-- Redirect Button -->
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSe6T0diMO8wqetxnln7kz96wp4buGzFaza4p1R6R9SB2fFdvQ/viewform?usp=header" 
+        target="_blank" 
+        class="form-btn">
+        Fill the Form
+      </a>
+    </div>
+  </section>
 
   <!-- Chat Box -->
   <div class="chat-box">
@@ -86,60 +76,194 @@
     <button>Tasks</button>
     <button>Quote of day</button>
   </div>
-<section class="faq-section">
-  <h2>FAQs</h2>
 
-  <div class="faq-item">
-    <button class="faq-question">What is Harmoni AI?</button>
-    <div class="faq-answer">
-      <p>Harmoni AI is an intelligent chatbot designed to provide instant support, answer questions, and enhance user engagement.</p>
-    </div>
-  </div>
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <h2>FAQs</h2>
 
-  <div class="faq-item">
-    <button class="faq-question">How does Harmoni AI work?</button>
-    <div class="faq-answer">
-      <p>It uses advanced natural language processing (NLP) and AI algorithms to understand your queries and respond with accurate and relevant answers.</p>
+    <div class="faq-item">
+      <button class="faq-question">What is Harmoni AI?</button>
+      <div class="faq-answer">
+        <p>Harmoni AI is an intelligent chatbot designed to provide instant support, answer questions, and enhance user engagement.</p>
+      </div>
     </div>
-  </div>
 
-  <div class="faq-item">
-    <button class="faq-question">Is Harmoni AI free to use?</button>
-    <div class="faq-answer">
-      <p>Yes, Harmoni AI offers a free version with core features. Premium plans may include advanced analytics, integrations, and customization.</p>
+    <div class="faq-item">
+      <button class="faq-question">How does Harmoni AI work?</button>
+      <div class="faq-answer">
+        <p>It uses advanced natural language processing (NLP) and AI algorithms to understand your queries and respond with accurate and relevant answers.</p>
+      </div>
     </div>
-  </div>
 
-  <div class="faq-item">
-    <button class="faq-question">Can I integrate Harmoni AI into my website or app?</button>
-    <div class="faq-answer">
-      <p>Absolutely! Harmoni AI can be embedded into websites, apps, or business platforms using our API or widget.</p>
+    <div class="faq-item">
+      <button class="faq-question">Is Harmoni AI free to use?</button>
+      <div class="faq-answer">
+        <p>Yes, Harmoni AI offers a free version with core features. Premium plans may include advanced analytics, integrations, and customization.</p>
+      </div>
     </div>
-  </div>
 
-  <div class="faq-item">
-    <button class="faq-question">Is my data safe with Harmoni AI?</button>
-    <div class="faq-answer">
-      <p>Yes. We take privacy seriously and ensure that all user conversations are encrypted and handled securely.</p>
+    <div class="faq-item">
+      <button class="faq-question">Can I integrate Harmoni AI into my website or app?</button>
+      <div class="faq-answer">
+        <p>Absolutely! Harmoni AI can be embedded into websites, apps, or business platforms using our API or widget.</p>
+      </div>
     </div>
-  </div>
 
-  <div class="faq-item">
-    <button class="faq-question">How can I get support if I face issues?</button>
-    <div class="faq-answer">
-      <p>You can reach our support team anytime via the contact form on the website or email us at <strong>support@harmoni.ai</strong>.</p>
+    <div class="faq-item">
+      <button class="faq-question">Is my data safe with Harmoni AI?</button>
+      <div class="faq-answer">
+        <p>Yes. We take privacy seriously and ensure that all user conversations are encrypted and handled securely.</p>
+      </div>
     </div>
-  </div>
-</section>
+
+    <div class="faq-item">
+      <button class="faq-question">How can I get support if I face issues?</button>
+      <div class="faq-answer">
+        <p>You can reach our support team anytime via the contact form on the website or email us at <strong>support@harmoni.ai</strong>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="about-section">
+    <div class="about-card">
+      <h2>About Us</h2>
+    <p><b>Harmoni AI</b> is an intelligent chatbot system developed by passionate students of the <b>CSE Department</b>. 
+    Our goal is to create a smart, user-friendly assistant that makes communication with technology simple, helpful, and interactive.</p>
+
+    <div class="about-cards">
+      <div class="card">
+        <h3>💡 Vision</h3>
+        <p>To design AI solutions that bring humans and technology closer through natural conversations.</p>
+      </div>
+
+      <div class="card">
+        <h3>🎯 Mission</h3>
+        <p>Build a chatbot that answers questions quickly and accurately, while supporting students with learning and knowledge.</p>
+      </div>
+
+      <div class="card">
+        <h3>👨‍💻 Team</h3>
+        <p>We are a group of enthusiastic developers working together on backend, frontend, and AI integration to build Harmoni AI into a reliable digital companion.</p>
+      </div>
+    </div>
+  </section>
 
   <!-- Footer -->
-  <footer>
-    <p>© 2025 Harmoni AI. All rights reserved.</p>
-    <p>Developed with 🤍 by Team Edunoverse</p>
-  </footer>
+  <!-- Footer -->
+<footer>
+  <p>© 2025 Harmoni AI. All rights reserved.</p>
+  <p>Developed with 🤍 by Team Edunoverse</p>
   
-</section>
-<!-- Script -->
+  <div class="footer-links">
+    <a href="terms.html">Terms & Conditions</a>
+    <a href="privacy.html">Privacy Policy</a>
+  </div>
+</footer>
+
+  <!-- Styles -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .form-btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background: linear-gradient(135deg, #4f46e5, #6d28d9);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .form-btn:hover {
+      background: linear-gradient(135deg, #4338ca, #5b21b6);
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    }
+
+    /* About Section */
+    .about-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 20px;
+      padding-bottom: 0px;
+    }
+
+    .about-card {
+      background: #918585;
+      color: #333;
+      max-width: 700px;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      text-align: center;
+    }
+
+    .about-card h2 {
+      margin-bottom: 15px;
+      font-size: 28px;
+      color: #444;
+    }
+
+    .about-card p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .about-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: #1e293b;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.5);
+      transition: transform 0.2s ease-in-out, background 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      background: #334155;
+    }
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: #f1f5f9;
+    }
+    .card p {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #d1d5db;
+    }
+
+    /* Dropdown styling */
+    .hero form {
+      margin-top: 15px;
+    }
+
+    .hero select {
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      width: 100%;
+      max-width: 300px;
+      text-align: center;
+    }
+  </style>
+
+  <!-- Script -->
   <script>
     // Hamburger toggle
     const hamburger = document.getElementById('hamburger');
@@ -148,13 +272,47 @@
     hamburger.addEventListener('click', () => {
       navLinks.classList.toggle('show');
     });
-    // FAQ accordion (multiple open at once)
-  document.querySelectorAll(".faq-question").forEach((button) => {
-    button.addEventListener("click", () => {
-      const faqItem = button.parentElement;
-      faqItem.classList.toggle("active");
+
+    // FAQ accordion
+    document.querySelectorAll(".faq-question").forEach((button) => {
+      button.addEventListener("click", () => {
+        const faqItem = button.parentElement;
+        faqItem.classList.toggle("active");
+      });
     });
-  });
+
+    // Dropdown validation
+    function validateForm() {
+      const profession = document.getElementById("profession").value;
+      if (profession === "") {
+        alert("⚠ Please select your profession before getting started!");
+        return false;
+      }
+      return true;
+    }
+      function showSelection() {
+    const profession = document.getElementById("profession").value;
+    const output = document.getElementById("selected-text");
+
+    output.textContent = "✅ You selected: " + profession;
+    output.classList.add("show");
+  }
+  function redirectToRegister() {
+    const profession = document.getElementById("profession").value;
+    if (profession === "") {
+      alert("⚠ Please select your profession before getting started!");
+    } else {
+      window.location.href = "register.html";
+    }
+  }
+
+// Typing Animation for Hero
+const text = "Welcome to Harmoni AI";
+const typingElement = document.getElementById("typing-text");
+
+// Wrap "AI" in a span for color effect
+const highlightedText = text.replace("Harmoni AI", "Harmoni <span>AI</span>");
+typingElement.innerHTML = highlightedText;
   </script>
 </body>
 </html>

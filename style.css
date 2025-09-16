@@ -113,7 +113,21 @@ footer {
   background: rgba(105, 84, 84, 0.05);
  background-color: #232946;
 }
+.footer-links {
+  margin-top: 10px;
+}
 
+.footer-links a {
+  color: #94a3b8; /* soft gray */
+  margin: 0 12px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #f97316; /* orange hover */
+}
 /* Footer Buttons */
 .footer-buttons {
   display: flex;
@@ -486,4 +500,114 @@ button:hover,
 .faq-item.active .faq-answer {
   max-height: 300px;
   padding: 15px 20px;
+}
+/* Button-style dropdown */
+.dropdown-btn {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 15px; /* space between dropdown & next button */
+}
+
+.dropdown-btn select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #4f46e5, #6d28d9); /* visible gradient */
+  color: #fff; /* ✅ white text */
+  width: 260px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+/* Add dropdown arrow */
+.dropdown-btn::after {
+  content: "▼";
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+/* Hover effect */
+.dropdown-btn select:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  background: linear-gradient(135deg, #4338ca, #5b21b6);
+}
+
+/* Dropdown options styling */
+.dropdown-btn select option {
+  background: #fff;  /* white background inside expanded menu */
+  color: #333;       /* black text inside expanded menu */
+  font-weight: 500;
+}
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+  transition: all 0.4s ease-in-out;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.hero h1 span {
+  color: #f97316; /* Orange for AI */
+  transition: all 0.4s ease-in-out;
+}
+
+.hero h1:hover {
+  color: #4f46e5; /* Indigo hover */
+  text-shadow: 0 0 10px rgba(79,70,229,0.8), 
+               0 0 20px rgba(109,40,217,0.6);
+  transform: scale(1.05);
+}
+
+.hero h1:hover span {
+  color: #6d28d9; /* Purple hover for AI */
+  text-shadow: 0 0 12px rgba(109,40,217,0.9);
+}
+/* Typing Animation */
+#typing-text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #4f46e5; /* cursor effect */
+  width: 0;
+  animation: typing 3s steps(25, end) forwards, blink 0.7s step-end infinite;
+}
+
+#typing-text span {
+  color: #4f46e5; /* highlight AI */
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  from, to { border-color: transparent; }
+  50% { border-color: #bfbfc700; }
+}
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #ff416c, #ff4b2b, #ff9d00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
 }
