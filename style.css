@@ -607,7 +607,9 @@ button:hover,
   font-size: 3rem;
   font-weight: 800;
   background: linear-gradient(90deg, #ff416c, #ff4b2b, #ff9d00);
+  background-clip: text;
   -webkit-background-clip: text;
+  color: transparent; /* fallback for non-webkit browsers */
   -webkit-text-fill-color: transparent;
   text-align: center;
 }
