@@ -624,7 +624,7 @@ button:hover,
                0 0 20px #ff5722; /* neon glow */
 }
 
-/* Mobile responsiveness */}
+/* Mobile responsiveness */
 @media (max-width: 600px) {
   .hero h1 {
     font-size: 1.8rem; /* smaller for mobile */
