@@ -616,7 +616,14 @@ button:hover,
 .hero h1 {
   font-size: 3rem;
   font-weight: 800;
-  background: linear-gradient(90deg, #ff416c, #ff4b2b, #ff9d00);
+  background: linear-gradient(
+    90deg,
+    #ff416c,
+    #ff4b2b,
+    #ff9d00,
+    #ffd700 95% /* golden yellow for AI */
+  );
+  background-size: 300% auto; /* ensure full coverage */
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -626,18 +633,10 @@ button:hover,
   word-break: break-word;
 }
 
-/* Special AI styling */
-.hero h1 .highlight {
-  color: #ffeb3b; /* bright yellow */
-  text-shadow: 0 0 5px #ffeb3b, 
-               0 0 10px #ff9800, 
-               0 0 20px #ff5722; /* neon glow */
-}
-
-/* Mobile responsiveness */
+/* Mobile fix */
 @media (max-width: 600px) {
   .hero h1 {
     font-size: 2rem;
-    padding: 0 10px;
+    background-size: 400% auto; /* stretch gradient wider for AI visibility */
   }
 }
