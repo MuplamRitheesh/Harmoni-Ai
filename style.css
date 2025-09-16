@@ -627,7 +627,7 @@ button:hover,
 /* Mobile responsiveness */
 @media (max-width: 600px) {
   .hero h1 {
-    font-size: 1.8rem; /* smaller for mobile */
-    background-size: 400% auto; /* stretch gradient so AI still shows */
+    font-size: 1.8rem;
+    padding: 0 10px;
   }
 }
