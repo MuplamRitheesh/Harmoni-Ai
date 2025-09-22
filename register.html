@@ -3,8 +3,190 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Harmoni AI - Register</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Harmoni AI - Register & Survey</title>
+   <style>
+    /* Reset & Base */
+    * { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body {
+      background: linear-gradient(135deg, #1e1f29, #2d1f46);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    /* Card Container */
+    .form-container {
+      background: #2c2f48;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+      width: 100%;
+      max-width: 400px;
+      color: #fff;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #ff5b5b;
+    }
+
+    /* Input Fields */
+    input[type="text"], input[type="email"], input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 8px;
+      background: #3c3f61;
+      color: #fff;
+      font-size: 1rem;
+      outline: none;
+      transition: 0.3s;
+    }
+    input:focus {
+      background: #464973;
+      border: 1px solid #ff5b5b;
+    }
+
+    /* Main Button */
+    button.btn {
+      width: 100%;
+      padding: 12px;
+      background: #ff5b5b;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button.btn:hover {
+      background: #e14c4c;
+    }
+
+    /* Divider */
+    .divider {
+      text-align: center;
+      margin: 15px 0;
+      position: relative;
+      color: #aaa;
+    }
+    .divider::before, .divider::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 40%;
+      height: 1px;
+      background: #555;
+    }
+    .divider::before { left: 0; }
+    .divider::after { right: 0; }
+
+    /* Social Buttons */
+    .social-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: 0.3s;
+      border: none;
+    }
+    .google-btn {
+      background: #fff;
+      color: #444;
+    }
+    .facebook-btn {
+      background: #1877f2;
+      color: #fff;
+    }
+    .google-btn:hover { background: #ff5b5b; }
+    .facebook-btn:hover { background: #145dc9; }
+    .social-btn img { width: 20px; height: 20px; margin-right: 10px; }
+
+    /* Login Link */
+    p {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 0.9rem;
+      color: #bbb;
+    }
+    p a {
+      color: #ff5b5b;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    p a:hover { text-decoration: underline; }
+    /* Survey Questions */
+#surveyForm {
+  margin-top: 30px;
+}
+
+#surveyForm h3 {
+  color: #ff5b5b;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+#surveyForm label {
+  display: block;
+  margin: 15px 0 8px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+/* .options label {
+  background: #3c3f61;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+} */
+.options label {
+  background: #3c3f61;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+.options label:hover {
+  background: #464973;
+}
+
+.options input[type="radio"] {
+  accent-color: #ff5b5b; /* Modern browsers */
+  transform: scale(1.1);
+}
+h3{
+  padding-top: 20px;
+  padding-bottom: none;
+  color: #e14c4c;
+}
+  </style>
+
 </head>
 <body>
   <div class="form-container">
@@ -14,25 +196,166 @@
       <input type="email" placeholder="Email" required>
       <input type="password" placeholder="Password" required>
       <button type="submit" class="btn">Register</button>
-
-      <!-- Divider -->
       <div class="divider"><span>OR</span></div>
-
-      <!-- Google Login -->
       <button type="button" class="social-btn google-btn">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google Logo">
         Continue with Google
       </button>
-
-      <!-- Facebook Login -->
       <button type="button" class="social-btn facebook-btn">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg" alt="Facebook Logo">
         Continue with Facebook
       </button>
+      <p>Already have an account? <a href="login.html"id="loginbtn">Login</a></p>
+    </form>
 
-      <p>Already have an account? <a href="login.html">Login</a></p>
+    <h3><center>Student Survey</center></h3>
+    <form id="surveyForm">
+      <!-- Question 1 to 9 (from before) -->
+      <label>1. How often do you participate in extracurricular activities?</label>
+      <div class="options">
+        <label><input type="radio" name="q1" value="Daily" required>Daily</label>
+        <label><input type="radio" name="q1" value="Weekly" required>Weekly</label>
+        <label><input type="radio" name="q1" value="Occasionally" required>Occasionally</label>
+        <label><input type="radio" name="q1" value="Never" required>Never</label>
+      </div>
+      <label>2. How do you usually manage your study time?</label>
+      <div class="options">
+        <label><input type="radio" name="q2" value="Scheduled and planned" required>Scheduled and planned</label>
+        <label><input type="radio" name="q2" value="Flexible, as needed" required>Flexible, as needed</label>
+        <label><input type="radio" name="q2" value="Procrastinate but catch up" required>Procrastinate but catch up</label>
+        <label><input type="radio" name="q2" value="Last minute cramming" required>Last minute cramming</label>
+      </div>
+      <label>3. How important are social activities in your college life?</label>
+      <div class="options">
+        <label><input type="radio" name="q3" value="Very important" required>Very important</label>
+        <label><input type="radio" name="q3" value="Important" required>Important</label>
+        <label><input type="radio" name="q3" value="Somewhat important" required>Somewhat important</label>
+        <label><input type="radio" name="q3" value="Not important" required>Not important</label>
+      </div>
+      <label>4. How do you balance screen time between study and leisure?</label>
+      <div class="options">
+        <label><input type="radio" name="q4" value="Well balanced" required>Well balanced</label>
+        <label><input type="radio" name="q4" value="More study than leisure" required>More study than leisure</label>
+        <label><input type="radio" name="q4" value="More leisure than study" required>More leisure than study</label>
+        <label><input type="radio" name="q4" value="Poorly balanced" required>Poorly balanced</label>
+      </div>
+      <label>5. How often do you engage in physical activity or sports?</label>
+      <div class="options">
+        <label><input type="radio" name="q5" value="Daily" required>Daily</label>
+        <label><input type="radio" name="q5" value="Several times a week" required>Several times a week</label>
+        <label><input type="radio" name="q5" value="Occasionally" required>Occasionally</label>
+        <label><input type="radio" name="q5" value="Rarely or never" required>Rarely or never</label>
+      </div>
+      <label>6. How confident are you managing stress during exams?</label>
+      <div class="options">
+        <label><input type="radio" name="q6" value="Very confident" required>Very confident</label>
+        <label><input type="radio" name="q6" value="Somewhat confident" required>Somewhat confident</label>
+        <label><input type="radio" name="q6" value="Occasionally stressed" required>Occasionally stressed</label>
+        <label><input type="radio" name="q6" value="Often overwhelmed" required>Often overwhelmed</label>
+      </div>
+      <label>7. What is your preferred way to relax after a busy day?</label>
+      <div class="options">
+        <label><input type="radio" name="q7" value="Listening to music" required>Listening to music</label>
+        <label><input type="radio" name="q7" value="Spending time with friends" required>Spending time with friends</label>
+        <label><input type="radio" name="q7" value="Watching TV or videos" required>Watching TV or videos</label>
+        <label><input type="radio" name="q7" value="Reading or hobbies" required>Reading or hobbies</label>
+      </div>
+      <label>8. How supportive are your teachers/professors?</label>
+      <div class="options">
+        <label><input type="radio" name="q8" value="Very supportive" required>Very supportive</label>
+        <label><input type="radio" name="q8" value="Supportive" required>Supportive</label>
+        <label><input type="radio" name="q8" value="Neutral" required>Neutral</label>
+        <label><input type="radio" name="q8" value="Unsupportive" required>Unsupportive</label>
+      </div>
+      <label>9. How often do you collaborate with classmates?</label>
+      <div class="options">
+        <label><input type="radio" name="q9" value="Frequently" required>Frequently</label>
+        <label><input type="radio" name="q9" value="Occasionally" required>Occasionally</label>
+        <label><input type="radio" name="q9" value="Rarely" required>Rarely</label>
+        <label><input type="radio" name="q9" value="Never" required>Never</label>
+      </div>
+
+      <!-- Question 10 -->
+      <label>10. How well does your institution provide resources?</label>
+      <div class="options">
+        <label><input type="radio" name="q10" value="Excellent" required>Excellent</label>
+        <label><input type="radio" name="q10" value="Good" required>Good</label>
+        <label><input type="radio" name="q10" value="Fair" required>Fair</label>
+        <label><input type="radio" name="q10" value="Poor" required>Poor</label>
+      </div>
+
+      <!-- Question 11 -->
+      <label>11. How often do you seek help from counselors or mentors?</label>
+      <div class="options">
+        <label><input type="radio" name="q11" value="Frequently" required>Frequently</label>
+        <label><input type="radio" name="q11" value="Occasionally" required>Occasionally</label>
+        <label><input type="radio" name="q11" value="Rarely" required>Rarely</label>
+        <label><input type="radio" name="q11" value="Never" required>Never</label>
+      </div>
+
+      <!-- Question 12 -->
+      <label>12. How satisfied are you with your academic performance?</label>
+      <div class="options">
+        <label><input type="radio" name="q12" value="Very satisfied" required>Very satisfied</label>
+        <label><input type="radio" name="q12" value="Satisfied" required>Satisfied</label>
+        <label><input type="radio" name="q12" value="Neutral" required>Neutral</label>
+        <label><input type="radio" name="q12" value="Unsatisfied" required>Unsatisfied</label>
+      </div>
+
+      <!-- Question 13 -->
+      <label>13. How often do you use digital devices for study?</label>
+      <div class="options">
+        <label><input type="radio" name="q13" value="Always" required>Always</label>
+        <label><input type="radio" name="q13" value="Often" required>Often</label>
+        <label><input type="radio" name="q13" value="Sometimes" required>Sometimes</label>
+        <label><input type="radio" name="q13" value="Never" required>Never</label>
+      </div>
+
+      <!-- Question 14 -->
+      <label>14. How likely are you to recommend your institution to others?</label>
+      <div class="options">
+        <label><input type="radio" name="q14" value="Very likely" required>Very likely</label>
+        <label><input type="radio" name="q14" value="Likely" required>Likely</label>
+        <label><input type="radio" name="q14" value="Unlikely" required>Unlikely</label>
+        <label><input type="radio" name="q14" value="Very unlikely" required>Very unlikely</label>
+      </div>
+
+      <button type="submit" class="btn">Submit Survey</button>
     </form>
   </div>
-  <script src="script.js"></script>
+
+  <script>
+    // Registration
+    document.getElementById("registerForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      const name = this.querySelector('input[type="text"]').value.trim();
+      const email = this.querySelector('input[type="email"]').value.trim();
+      const password = this.querySelector('input[type="password"]').value.trim();
+      if(!name || !email || !password){ alert("Please fill all fields!"); return; }
+      if(localStorage.getItem(email)){ alert("You are already registered! Please login."); return; }
+      localStorage.setItem(email, JSON.stringify({name,email,password}));
+      alert("Registration successful! 🎉");
+      this.reset();
+    });
+
+    // Survey
+    document.getElementById("surveyForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      const selects = this.querySelectorAll("input[type='radio']");
+      const surveyData = {};
+      for(let i=1;i<=14;i++){
+        const selected = this.querySelector(`input[name="q${i}"]:checked`);
+        if(!selected){ alert(`Please answer question ${i}`); return; }
+        surveyData["q"+i] = selected.value;
+      }
+      localStorage.setItem("survey_"+Date.now(), JSON.stringify(surveyData));
+      alert("Survey submitted successfully! ✅");
+      this.reset();
+    });
+
+    // Social buttons
+    document.querySelector(".google-btn").addEventListener("click", ()=>alert("Google login coming soon! 🌐"));
+    document.querySelector(".facebook-btn").addEventListener("click", ()=>alert("Facebook login coming soon! 📘"));
+  </script>
 </body>
 </html>

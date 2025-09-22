@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harmoni AI - Dashboard</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body {
+      background: linear-gradient(135deg, #1e1f29, #2d1f46);
+      min-height: 100vh;
+      display:flex; justify-content:center; align-items:flex-start;
+      padding:40px;
+    }
+    .dashboard {
+      background:#2c2f48;
+      padding:30px;
+      border-radius:12px;
+      box-shadow:0 8px 25px rgba(0,0,0,0.4);
+      width:100%; max-width:800px;
+      color:#fff;
+    }
+    h2 { text-align:center; margin-bottom:20px; color:#ff5b5b; }
+    .user-info p { margin:5px 0; font-size:1rem; }
+    .survey-results {
+      margin-top:20px; padding:15px;
+      background:#3c3f61; border-radius:8px;
+    }
+    .survey-results h3 { margin-bottom:10px; color:#ffb84d; }
+    .survey-results ul { list-style:none; padding:0; }
+    .survey-results li {
+      padding:8px; border-bottom:1px solid #555; font-size:0.95rem;
+    }
+    .survey-results li:last-child { border-bottom:none; }
+    button {
+      margin-top:20px; width:100%; padding:12px;
+      background:#ff5b5b; border:none; border-radius:8px;
+      color:white; font-size:1rem; cursor:pointer; transition:0.3s;
+    }
+    button:hover { background:#e14c4c; }
+  </style>
+</head>
+<body>
+  <div class="dashboard">
+    <h2>Welcome to Your Dashboard</h2>
+    <div class="user-info" id="userInfo"></div>
+    <div class="survey-results" id="surveyResults">
+      <h3>Your Survey Results</h3>
+      <ul id="resultsList"></ul>
+    </div>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <script>
+    const currentUser = localStorage.getItem("currentUser");
+    if(!currentUser){
+      alert("You must login first!");
+      window.location.href = "login.html";
+    } else {
+      const user = JSON.parse(localStorage.getItem(currentUser));
+      document.getElementById("userInfo").innerHTML =
+        `<p><strong>Name:</strong> ${user.name}</p>
+         <p><strong>Email:</strong> ${user.email}</p>`;
+
+      // Load last survey for this user
+      const surveyKey = "survey_" + currentUser;
+      const survey = localStorage.getItem(surveyKey);
+      const list = document.getElementById("resultsList");
+      if(!survey){
+        list.innerHTML = "<li>No survey submitted yet.</li>";
+      } else {
+        const answers = JSON.parse(survey);
+        Object.entries(answers).forEach(([q, ans])=>{
+          const li = document.createElement("li");
+          li.textContent = `${q.toUpperCase()}: ${ans}`;
+          list.appendChild(li);
+        });
+      }
+    }
+    function logout(){
+      localStorage.removeItem("currentUser");
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>
