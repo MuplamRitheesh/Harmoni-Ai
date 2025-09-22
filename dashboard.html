@@ -73,6 +73,7 @@
         Object.entries(answers).forEach(([q, ans])=>{
           const li = document.createElement("li");
           li.textContent = `${q.toUpperCase()}: ${ans}`;
+
           list.appendChild(li);
         });
       }
