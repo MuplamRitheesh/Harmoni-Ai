@@ -1,129 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Harmoni AI - Login</title>
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-    body {
-      background: linear-gradient(135deg, #1e1f29, #2d1f46);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-    .form-container {
-      background: #2c2f48;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-      width: 100%;
-      max-width: 400px;
-      color: #fff;
-    }
-    h2 { text-align:center; margin-bottom:20px; color:#ff5b5b; }
-    input[type="email"], input[type="password"] {
-      width: 100%; padding: 12px; margin-bottom: 15px;
-      border: none; border-radius: 8px;
-      background: #3c3f61; color: #fff; font-size: 1rem;
-      outline: none; transition: 0.3s;
-    }
-    input:focus { background:#464973; border:1px solid #ff5b5b; }
-    button {
-      width:100%; padding:12px; background:#ff5b5b; border:none;
-      border-radius:8px; color:white; font-size:1rem; cursor:pointer;
-      transition:0.3s;
-    }
-    button:hover { background:#e14c4c; }
-    p { text-align:center; margin-top:15px; font-size:0.9rem; color:#bbb; }
-    p a { color:#ff5b5b; text-decoration:none; font-weight:bold; }
-    p a:hover { text-decoration:underline; }
-    
-    /* Social Buttons */
-    .social-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 10px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 1rem;
-      font-weight: bold;
-      transition: 0.3s;
-      border: none;
-    }
-    .google-btn {
-      background: #fff;
-      color: #444;
-    }
-    .facebook-btn {
-      background: #1877f2;
-      color: #fff;
-    }
-    .google-btn:hover { background: #f0f0f0; }
-    .facebook-btn:hover { background: #145dc9; }
-    .social-btn img { width: 20px; height: 20px; margin-right: 10px; }
-
-    /* Divider */
-    .divider {
-      text-align: center;
-      margin: 15px 0;
-      position: relative;
-      color: #aaa;
-    }
-    .divider::before, .divider::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      width: 40%;
-      height: 1px;
-      background: #555;
-    }
-    .divider::before { left: 0; }
-    .divider::after { right: 0; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harmoni AI - Login</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+body { background: linear-gradient(135deg,#1e1f29,#2d1f46); min-height:100vh; display:flex; justify-content:center; align-items:center; padding:20px; }
+.form-container { background:#2c2f48; padding:30px; border-radius:12px; box-shadow:0 8px 25px rgba(0,0,0,0.4); width:100%; max-width:400px; color:#fff; }
+h2 { text-align:center; margin-bottom:20px; color:#ff5b5b; }
+input[type="email"], input[type="password"] { width:100%; padding:12px; margin-bottom:15px; border:none; border-radius:8px; background:#3c3f61; color:#fff; font-size:1rem; outline:none; transition:0.3s; }
+input:focus { background:#464973; border:1px solid #ff5b5b; }
+button { width:100%; padding:12px; background:#ff5b5b; border:none; border-radius:8px; color:white; font-size:1rem; cursor:pointer; transition:0.3s; }
+button:hover { background:#e14c4c; }
+p { text-align:center; margin-top:15px; font-size:0.9rem; color:#bbb; }
+p a { color:#ff5b5b; text-decoration:none; font-weight:bold; }
+p a:hover { text-decoration:underline; }
+/* Social Buttons */
+.social-btn { display:flex; align-items:center; justify-content:center; width:100%; padding:12px; margin-bottom:10px; border-radius:8px; cursor:pointer; font-size:1rem; font-weight:bold; transition:0.3s; border:none; }
+.google-btn { background:#fff; color:#444; }
+.facebook-btn { background:#1877f2; color:#fff; }
+.google-btn:hover { background:#f0f0f0; }
+.facebook-btn:hover { background:#145dc9; }
+.social-btn img { width:20px; height:20px; margin-right:10px; }
+.divider { text-align:center; margin:15px 0; position:relative; color:#aaa; }
+.divider::before, .divider::after { content:""; position:absolute; top:50%; width:40%; height:1px; background:#555; }
+.divider::before { left:0; } .divider::after { right:0; }
+</style>
 </head>
 <body>
-  <div class="form-container">
-    <h2>Login to Harmoni AI</h2>
-    <form id="loginForm">
-      <input type="email" placeholder="Email" required>
-      <input type="password" placeholder="Password" required>
-      <button type="submit">Login</button>
-      <div class="divider"><span>OR</span></div>
-      <button type="button" class="social-btn google-btn">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google Logo">
-        Continue with Google
-      </button>
-      <button type="button" class="social-btn facebook-btn">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg" alt="Facebook Logo">
-        Continue with Facebook
-      </button>
-      <p>Don’t have an account? <a href="register.html">Register</a></p>
-    </form>
-  </div>
+<div class="form-container">
+<h2>Login to Harmoni AI</h2>
+<form id="loginForm">
+  <input type="email" placeholder="Email" required>
+  <input type="password" placeholder="Password" required>
+  <button type="submit">Login</button>
+  <div class="divider"><span>OR</span></div>
+  <button type="button" class="social-btn google-btn">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg">Continue with Google
+  </button>
+  <button type="button" class="social-btn facebook-btn">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg">Continue with Facebook
+  </button>
+  <p>Don’t have an account? <a href="register.html">Register</a></p>
+</form>
+</div>
 
-  <script>
-     // Social buttons
-    document.querySelector(".google-btn").addEventListener("click", ()=>alert("Google login coming soon! 🌐"));
-    document.querySelector(".facebook-btn").addEventListener("click", ()=>alert("Facebook login coming soon! 📘"));
-    document.getElementById("loginForm").addEventListener("submit", function(e){
-      e.preventDefault();
-      const email = this.querySelector('input[type="email"]').value.trim();
-      const password = this.querySelector('input[type="password"]').value.trim();
-      const user = localStorage.getItem(email);
-      if(!user){ alert("User not found! Please register."); return; }
-      const data = JSON.parse(user);
-      if(data.password !== password){ alert("Incorrect password!"); return; }
-      localStorage.setItem("currentUser", email);
-      alert("Login successful ✅ Redirecting...");
-      window.location.href = "dashboard.html";
-      
-    });
-  </script>
+<script>
+// Social buttons
+document.querySelector(".google-btn").addEventListener("click", ()=>alert("Google login coming soon! 🌐"));
+document.querySelector(".facebook-btn").addEventListener("click", ()=>alert("Facebook login coming soon! 📘"));
+
+// Login
+document.getElementById("loginForm").addEventListener("submit", e=>{
+  e.preventDefault();
+  const email = e.target.querySelector('input[type="email"]').value.trim();
+  const password = e.target.querySelector('input[type="password"]').value.trim();
+  const userData = localStorage.getItem(email);
+  if(!userData){ alert("User not found! Please register."); return; }
+  const user = JSON.parse(userData);
+  if(user.password !== password){ alert("Incorrect password!"); return; }
+
+  // Save current user
+  localStorage.setItem("currentUser", email);
+  alert("Login successful ✅ Redirecting...");
+  window.location.href = "dashboard.html";
+});
+</script>
 </body>
 </html>
